@@ -1,4 +1,8 @@
-# README
+# ALOR
+
+### Why Alor?
+
+This started as "Accessibility Review Dashboard", or ARD, which is the [airport code for Alor Island Airport](https://en.wikipedia.org/wiki/Alor_Island). 
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
