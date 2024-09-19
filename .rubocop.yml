@@ -7,6 +7,7 @@ AllCops:
   TargetRubyVersion: 3.3
   DisplayCopNames: true
   SuggestExtensions: false
+  NewCops: enable
   Exclude:
     - Gemfile.lock
     - '**/*.md'
