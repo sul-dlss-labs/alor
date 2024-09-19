@@ -1,2 +1,5 @@
 youtube:
   api_key: 'your_youtube_api_key'
+
+cache:
+  base_path: 'storage/cache'

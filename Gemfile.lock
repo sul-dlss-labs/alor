@@ -188,6 +188,8 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.32.3)
       parser (>= 3.3.1.0)
+    rubocop-rspec (3.0.5)
+      rubocop (~> 1.61)
     ruby-progressbar (1.13.0)
     securerandom (0.3.1)
     signet (0.19.0)
@@ -228,6 +230,7 @@ DEPENDENCIES
   rake
   rspec
   rubocop
+  rubocop-rspec
   web-console
   zeitwerk
 

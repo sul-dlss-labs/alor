@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module Alor
+  # DurationTranslator translates a YouTube video duration string into a human-readable format
+  # Ex: PT1H2M3S -> 01:02:03
   class DurationTranslator
     def self.translate(duration)
       new(duration).translate
