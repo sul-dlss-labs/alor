@@ -34,7 +34,11 @@ module Youtube
     end
 
     def video_data(id)
-      JSON.parse(youtube_client.list_videos('contentDetails,statistics', id:).to_json)
+      youtube_client.list_videos('contentDetails,statistics', id:).items.first.to_h
+    end
+
+    def caption_data(id)
+      youtube_client.list_captions('id,snippet', id)
     end
 
     private

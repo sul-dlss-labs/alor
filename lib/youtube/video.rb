@@ -14,7 +14,9 @@ module Youtube
 
     def video_data
       @video_data ||= CacheHandler.fetch(video_id) do
-        youtube_client.video_data(video_id)
+        youtube_client.video_data(video_id).merge(
+          { captions: youtube_client.caption_data(video_id).items.map(&:to_h) }
+        ).to_json
       end
     end
 

@@ -3,8 +3,8 @@
 module Youtube
   # Handler manages the caching of YouTube API responses
   class CacheHandler
-    def self.fetch(key, &block)
-      new(key).fetch(&block)
+    def self.fetch(key, &)
+      new(key).fetch(&)
     end
 
     def initialize(key)
@@ -17,11 +17,11 @@ module Youtube
       return JSON.parse(File.read(cache_file)) if File.exist?(cache_file)
 
       # Yield to the block to get the content
-      data = yield.call if block_given?
+      data = yield if block_given?
 
-      File.open(cache_file, 'w') do |f|
-        f.write(data)
-      end
+      File.write(cache_file, data)
+
+      JSON.parse(data)
     end
 
     private

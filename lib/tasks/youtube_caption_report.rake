@@ -21,9 +21,9 @@ namespace :youtube do
         csv << [
           video_id,
           video['snippet']['title'],
-          Alor::DurationTranslator.translate(video_data['contentDetails']['duration']),
-          video_data['contentDetails']['caption'],
-          video_data['statistics']['viewCount']
+          Alor::DurationTranslator.translate(video_data['content_details']['duration']),
+          video_data['content_details']['caption'],
+          video_data['statistics']['view_count']
         ]
       end
     end

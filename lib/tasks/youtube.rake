@@ -14,46 +14,6 @@ namespace :youtube do
     puts "Custom URL: #{channel.custom_url}"
   end
 
-  desc 'Harvest YouTube Video Data'
-  task harvest_video_data: :environment do
-    # Initialize the YouTube API client
-    youtube = Youtube::Client.new
-
-    list_of_channel_videos = JSON.parse(File.read('tmp/out.json'))
-
-    FileUtils.mkdir_p('tmp/videos')
-
-    # Print the video data
-    list_of_channel_videos.each do |video|
-      video_id = video['id']['videoId']
-      File.open("tmp/videos/#{video_id}.json", 'w') do |f|
-        yt_data = youtube.list_videos('contentDetails,statistics', id: video_id).items.first
-        puts "#{video_id} - Title: #{video['snippet']['title']}"
-        f.write(yt_data.to_json)
-      end
-    end
-  end
-
-  desc 'Harvest YouTube Video Captions'
-  task harvest_caption_data: :environment do
-    # Initialize the YouTube API client
-    youtube = Youtube::Client.new
-
-    list_of_channel_videos = JSON.parse(File.read('tmp/out.json'))
-
-    FileUtils.mkdir_p('tmp/captions')
-
-    # Print the video data
-    list_of_channel_videos.each do |video|
-      video_id = video['id']['videoId']
-      File.open("tmp/captions/#{video_id}.json", 'w') do |f|
-        yt_data = youtube.list_captions('id,snippet', video_id).items.first
-        puts "#{video_id} - Title: #{video['snippet']['title']}"
-        f.write(yt_data.to_json)
-      end
-    end
-  end
-
   desc 'Harvest YouTube Video Captions'
   task harvest_caption_files: :environment do
     # Initialize the YouTube API client
