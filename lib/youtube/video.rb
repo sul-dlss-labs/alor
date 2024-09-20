@@ -14,10 +14,20 @@ module Youtube
 
     def video_data
       @video_data ||= CacheHandler.fetch(video_id) do
-        youtube_client.video_data(video_id).merge(
+        youtube_client.video_data(video_id).items.first.to_h.merge(
           { captions: youtube_client.caption_data(video_id).items.map(&:to_h) }
-        ).to_json
+        )
       end
+    end
+
+    def asr_languages
+      asr_caption_tracks = video_data['captions'].select { |caption| caption['snippet']['track_kind'] == 'asr' }
+      asr_caption_tracks.map { |caption| caption['snippet']['language'] }.join(', ')
+    end
+
+    def edited_languages
+      edited_caption_tracks = video_data['captions'].select { |caption| caption['snippet']['track_kind'] != 'asr' }
+      edited_caption_tracks.map { |caption| caption['snippet']['language'] }.join(', ')
     end
 
     private
