@@ -24,7 +24,9 @@ module Youtube
     end
 
     def videos
-      channel_data['videos']
+      channel_data['videos'].map do |video|
+        Video.new(channel_id:, video_id: video['id']['videoId'], details: video['snippet'])
+      end
     end
 
     private
@@ -34,7 +36,11 @@ module Youtube
     end
 
     def channel_data
-      @channel_data ||= CacheHandler.fetch(channel_id) do
+      @channel_data ||= JSON.parse(fetch_channel_data)
+    end
+
+    def fetch_channel_data
+      CacheHandler.fetch(channel_id) do
         youtube_client.channel_data['videos'] = youtube_client.videos
       end
     end

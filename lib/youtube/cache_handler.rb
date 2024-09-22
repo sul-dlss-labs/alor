@@ -14,14 +14,9 @@ module Youtube
     attr_reader :key
 
     def fetch
-      return JSON.parse(File.read(cache_file)) if File.exist?(cache_file)
+      File.write(cache_file, yield) unless File.exist?(cache_file)
 
-      # Yield to the block to get the content
-      data = yield if block_given?
-
-      File.write(cache_file, data)
-
-      JSON.parse(data)
+      File.read(cache_file)
     end
 
     private

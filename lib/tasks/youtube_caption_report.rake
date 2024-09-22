@@ -14,18 +14,15 @@ namespace :youtube do
 
       # Output the video data to a csv file
       Youtube::Channel.new(channel_id: args[:channel_id]).videos.each do |video|
-        video_id = video['id']['videoId']
-        puts "#{video_id} - Title: #{video['snippet']['title']}"
-        youtube_video = Youtube::Video.new(channel_id: args[:channel_id], video_id:)
-  
+        puts "#{video.video_id} - Title: #{video.title}"
         csv << [
-          video_id,
-          video['snippet']['title'],
-          Alor::DurationTranslator.translate(youtube_video.video_data['content_details']['duration']),
-          youtube_video.video_data['statistics']['view_count'],
-          youtube_video.video_data['content_details']['caption'],
-          youtube_video.asr_languages,
-          youtube_video.edited_languages
+          video.video_id,
+          video.title,
+          video.duration,
+          video.view_count,
+          video.captioned?,
+          video.asr_languages,
+          video.edited_languages
         ]
       end
     end
