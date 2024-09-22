@@ -12,7 +12,7 @@ module Youtube
     attr_reader :channel_id
 
     def title
-      channel_detail['title']
+      channel['snippet']['title']
     end
 
     def url
@@ -20,7 +20,7 @@ module Youtube
     end
 
     def custom_url
-      "https://www.youtube.com/#{channel_detail['customUrl']}"
+      "https://www.youtube.com/#{channel_data['snippet']['customUrl']}"
     end
 
     def videos
@@ -31,17 +31,16 @@ module Youtube
 
     private
 
-    def channel_detail
-      @channel_detail ||= channel_data['items'].first['snippet']
-    end
-
     def channel_data
       @channel_data ||= JSON.parse(fetch_channel_data)
     end
 
     def fetch_channel_data
       CacheHandler.fetch(channel_id) do
-        youtube_client.channel_data['videos'] = youtube_client.videos
+        [
+          youtube_client.channel_data.items.first.to_h,
+          { videos: youtube_client.videos }
+        ].reduce(&:merge).to_json
       end
     end
 

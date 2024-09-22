@@ -18,7 +18,7 @@ module Youtube
     end
 
     def channel_data
-      @channel_data = JSON.parse(youtube_client.list_channels('snippet', id:).to_json)
+      youtube_client.list_channels('snippet', id:)
     end
 
     def videos
@@ -26,7 +26,7 @@ module Youtube
       [].tap do |videos|
         loop do
           results = fetch_videos(page_token:)
-          videos << results.items.map(&:to_json)
+          videos << results.items # .map(&:to_h)
           page_token = results.next_page_token
           break if page_token.nil?
         end
