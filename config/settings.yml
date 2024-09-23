@@ -3,3 +3,6 @@ youtube:
 
 cache:
   base_path: 'storage/cache'
+
+reports:
+  base_path: 'storage/reports'
