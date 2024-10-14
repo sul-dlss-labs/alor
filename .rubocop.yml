@@ -13,6 +13,7 @@ AllCops:
     - '**/*.md'
     - 'bin/console'
     - 'config/boot.rb'
+    - vendor/**/*
 
 RSpec/MultipleExpectations:
   Max: 5

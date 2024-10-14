@@ -13,6 +13,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
   gem 'rspec'
   gem 'rubocop', require: false
+  gem 'rubocop-discourse'
   gem 'rubocop-rspec'
 end
 
