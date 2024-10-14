@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'config'
 gem 'csv'
 gem 'google-api-client', require: 'google/apis/youtube_v3'
+gem 'google-apis-sheets_v4'
 gem 'rake'
 gem 'zeitwerk'
 
