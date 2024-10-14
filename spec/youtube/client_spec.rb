@@ -8,8 +8,16 @@ RSpec.describe Youtube::Client do
   let(:channel_id) { 'channel' }
   let(:channel_data) { File.read('spec/fixtures/api_channel_response.json') }
   let(:video_list) { JSON.parse(File.read('spec/fixtures/api_videos_response.json'))['items'] }
-  let(:search_response) { instance_double(Google::Apis::YoutubeV3::SearchListsResponse, items: video_list, next_page_token: nil) }
-  let(:client) { instance_double(Google::Apis::YoutubeV3::YouTubeService, list_channels: channel_data, list_searches: search_response) }
+  let(:search_response) do
+    instance_double(Google::Apis::YoutubeV3::SearchListsResponse,
+                    items: video_list,
+                    next_page_token: nil)
+  end
+  let(:client) do
+    instance_double(Google::Apis::YoutubeV3::YouTubeService,
+                    list_channels: channel_data,
+                    list_searches: search_response)
+  end
 
   before do
     allow(Google::Apis::YoutubeV3::YouTubeService).to receive(:new).and_return(client)

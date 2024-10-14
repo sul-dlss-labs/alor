@@ -32,7 +32,7 @@ module Youtube
 
     def valid_cache?
       return false unless File.exist?(cache_file)
-      
+
       cache_file_age < Settings.cache.expiry_days
     end
   end
