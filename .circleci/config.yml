@@ -1,0 +1,12 @@
+version: 2.1
+orbs:
+  ruby-rails: sul-dlss/ruby-rails@4.2.2
+workflows:
+  build:
+    jobs:
+      - ruby-rails/lint:
+          name: lint
+          context: dlss
+      - ruby-rails/test-gem:
+          name: test
+          context: dlss
