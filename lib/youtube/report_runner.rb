@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'debug'
+
 module Youtube
   # ReportRunner runs the selected report for the YouTube channel
   class ReportRunner
@@ -23,16 +25,16 @@ module Youtube
 
     def caption_report_data
       [].tap do |data|
-        youtube_client.videos.each do |video|
-          puts "#{video.video_id} - Title: #{video.title}"
+        youtube_channel.videos.each do |video|
+          debugger
           data << [video.video_id, video.title, video.duration, video.view_count,
                    video.captioned?, video.asr_languages, video.edited_languages]
         end
       end
     end
 
-    def youtube_client
-      @youtube_client ||= Youtube::Channel.new(channel_id:)
+    def youtube_channel
+      @youtube_channel ||= Youtube::Channel.new(channel_id:)
     end
   end
 end

@@ -1,0 +1,176 @@
+{
+  "etag": "nX62ALUILUbAY0xMtgZgyKmcVo8",
+  "items": [
+    {
+      "etag": "UaCP1YzrGAoPKI29EG9rycu6Q9o",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "m2rCpXnyCnY"
+      },
+      "kind": "youtube#searchResult",
+      "snippet": {
+        "channelId": "UCc2CQuHkhKGZ-2ZLTZVGE2A",
+        "channelTitle": "Stanford University Libraries Digital Library Systems & Services",
+        "description": "Brief demo on how to overlay a record by importing a record from OCLC.",
+        "liveBroadcastContent": "none",
+        "publishedAt": "2023-06-21T20:49:14Z",
+        "thumbnails": {
+          "default": {
+            "height": 90,
+            "url": "https://i.ytimg.com/vi/m2rCpXnyCnY/default.jpg",
+            "width": 120
+          },
+          "high": {
+            "height": 360,
+            "url": "https://i.ytimg.com/vi/m2rCpXnyCnY/hqdefault.jpg",
+            "width": 480
+          },
+          "medium": {
+            "height": 180,
+            "url": "https://i.ytimg.com/vi/m2rCpXnyCnY/mqdefault.jpg",
+            "width": 320
+          }
+        },
+        "title": "Overlaying a Record"
+      }
+    },
+    {
+      "etag": "kqA2_A1ktnttPSKfg3epEloI2Rg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "8ccPVkzMSOo"
+      },
+      "kind": "youtube#searchResult",
+      "snippet": {
+        "channelId": "UCc2CQuHkhKGZ-2ZLTZVGE2A",
+        "channelTitle": "Stanford University Libraries Digital Library Systems & Services",
+        "description": "",
+        "liveBroadcastContent": "none",
+        "publishedAt": "2021-10-21T23:54:39Z",
+        "thumbnails": {
+          "default": {
+            "height": 90,
+            "url": "https://i.ytimg.com/vi/8ccPVkzMSOo/default.jpg",
+            "width": 120
+          },
+          "high": {
+            "height": 360,
+            "url": "https://i.ytimg.com/vi/8ccPVkzMSOo/hqdefault.jpg",
+            "width": 480
+          },
+          "medium": {
+            "height": 180,
+            "url": "https://i.ytimg.com/vi/8ccPVkzMSOo/mqdefault.jpg",
+            "width": 320
+          }
+        },
+        "title": "Sinopia Middleware Demo; Early Fall 2021 Work Cycle"
+      }
+    },
+    {
+      "etag": "6z9RXdC6wqwwBoBp5aSN6G2U3e4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "uih5JuQnYuo"
+      },
+      "kind": "youtube#searchResult",
+      "snippet": {
+        "channelId": "UCc2CQuHkhKGZ-2ZLTZVGE2A",
+        "channelTitle": "Stanford University Libraries Digital Library Systems & Services",
+        "description": "A demonstration of new features in SearchWorks supporting the International Image Interoperability Framework.",
+        "liveBroadcastContent": "none",
+        "publishedAt": "2016-08-26T17:55:50Z",
+        "thumbnails": {
+          "default": {
+            "height": 90,
+            "url": "https://i.ytimg.com/vi/uih5JuQnYuo/default.jpg",
+            "width": 120
+          },
+          "high": {
+            "height": 360,
+            "url": "https://i.ytimg.com/vi/uih5JuQnYuo/hqdefault.jpg",
+            "width": 480
+          },
+          "medium": {
+            "height": 180,
+            "url": "https://i.ytimg.com/vi/uih5JuQnYuo/mqdefault.jpg",
+            "width": 320
+          }
+        },
+        "title": "IIIF drag &#39;n drop features in Stanford University Library online catalog"
+      }
+    },
+    {
+      "etag": "oCuEo8iO9hmCLET7d-69XnKIPSE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "SFHwqC47UwA"
+      },
+      "kind": "youtube#searchResult",
+      "snippet": {
+        "channelId": "UCc2CQuHkhKGZ-2ZLTZVGE2A",
+        "channelTitle": "Stanford University Libraries Digital Library Systems & Services",
+        "description": "",
+        "liveBroadcastContent": "none",
+        "publishedAt": "2023-08-22T17:37:45Z",
+        "thumbnails": {
+          "default": {
+            "height": 90,
+            "url": "https://i.ytimg.com/vi/SFHwqC47UwA/default.jpg",
+            "width": 120
+          },
+          "high": {
+            "height": 360,
+            "url": "https://i.ytimg.com/vi/SFHwqC47UwA/hqdefault.jpg",
+            "width": 480
+          },
+          "medium": {
+            "height": 180,
+            "url": "https://i.ytimg.com/vi/SFHwqC47UwA/mqdefault.jpg",
+            "width": 320
+          }
+        },
+        "title": "How To Search for Orders in FOLIO"
+      }
+    },
+    {
+      "etag": "PdbH2L_BK5kDF8U3bV8WY23TxfI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "eAZLMOYuRLA"
+      },
+      "kind": "youtube#searchResult",
+      "snippet": {
+        "channelId": "UCc2CQuHkhKGZ-2ZLTZVGE2A",
+        "channelTitle": "Stanford University Libraries Digital Library Systems & Services",
+        "description": "In this video I show the streamlined workflow for moving content from Oak, Sherlock, and Stanford's Google Drive to the Stanford ...",
+        "liveBroadcastContent": "none",
+        "publishedAt": "2023-09-25T16:15:39Z",
+        "thumbnails": {
+          "default": {
+            "height": 90,
+            "url": "https://i.ytimg.com/vi/eAZLMOYuRLA/default.jpg",
+            "width": 120
+          },
+          "high": {
+            "height": 360,
+            "url": "https://i.ytimg.com/vi/eAZLMOYuRLA/hqdefault.jpg",
+            "width": 480
+          },
+          "medium": {
+            "height": 180,
+            "url": "https://i.ytimg.com/vi/eAZLMOYuRLA/mqdefault.jpg",
+            "width": 320
+          }
+        },
+        "title": "Depositing from Stanford&#39;s Oak, Sherlock and GDrive to the Stanford Digital Repository using Globus"
+      }
+    }
+  ],
+  "kind": "youtube#searchListResponse",
+  "pageInfo": {
+    "resultsPerPage": 5,
+    "totalResults": 5
+  },
+  "regionCode": "US"
+}

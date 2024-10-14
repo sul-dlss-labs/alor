@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe Alor::DurationTranslator do
+RSpec.describe Youtube::DurationTranslator do
   describe '.translate' do
     context 'when the duration is nil' do
       it 'returns 00:00:00' do

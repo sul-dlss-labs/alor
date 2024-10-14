@@ -12,7 +12,7 @@ module Youtube
     attr_reader :channel_id
 
     def title
-      channel['snippet']['title']
+      channel_data['snippet']['title']
     end
 
     def url
@@ -20,7 +20,7 @@ module Youtube
     end
 
     def custom_url
-      "https://www.youtube.com/#{channel_data['snippet']['customUrl']}"
+      "https://www.youtube.com/#{channel_data['snippet']['custom_url']}"
     end
 
     def videos

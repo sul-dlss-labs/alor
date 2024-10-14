@@ -13,3 +13,9 @@ AllCops:
     - '**/*.md'
     - 'bin/console'
     - 'config/boot.rb'
+
+RSpec/MultipleExpectations:
+  Max: 5
+
+RSpec/NamedSubject:
+  Enabled: false
