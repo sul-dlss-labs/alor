@@ -4,25 +4,49 @@
 
 This started as "Accessibility Review Dashboard", or ARD, which is the [airport code for Alor Island Airport](https://en.wikipedia.org/wiki/Alor_Island). 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project does not currently include the framework for a dashboard interface but could be added in the future.
 
-Things you may want to cover:
+## Installation & Setup
 
-* Ruby version
+### Clone the repository
 
-* System dependencies
+```
+git clone https://github.com/sul-dlss-labs/alor.git
+```
 
-* Configuration
+### Setup your local credentials
 
-* Database creation
+#### Create a local settings file for your auth key
 
-* Database initialization
+Create a `settings.local.yml` file in the `config` path and add the following content:
 
-* How to run the test suite
+```
+youtube:
+  api_key: '[YOUR API KEY]'
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+You can acquire an API key by visiting [Google API Credentials](https://console.cloud.google.com/apis/credentials)
 
-* Deployment instructions
+Optionally you can add a default channel ID to your local config under `youtube` in `settings.local.yml` add:
 
-* ...
+```
+channel_id: 'CHANNEL_ID'
+```
+
+Note: If a default channel ID is not set, you will need to pass the ID to the rake task.
+
+### Run the caption report through rake
+
+With a default channel id set:
+
+```
+bundle exec rake youtube:caption_report
+```
+
+Without a default channel id set:
+
+```
+bundle exec rake youtube:caption_report["CHANNEL_ID"]
+```
+
+The exported CSV file will be available in `storage/reports/<CHANNEL_ID>-<DATETIME>.csv`
