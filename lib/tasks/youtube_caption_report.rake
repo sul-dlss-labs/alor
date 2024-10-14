@@ -4,6 +4,8 @@ require 'csv'
 require 'config'
 require 'debug'
 
+require_relative '../../config/boot'
+
 namespace :youtube do
   desc 'YouTube Video Captions Report'
   task :caption_report, [:channel_id] do |_t, args|

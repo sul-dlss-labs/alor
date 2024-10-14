@@ -4,6 +4,8 @@ require 'csv'
 require 'config'
 require 'debug'
 
+require_relative '../../config/boot'
+
 namespace :youtube do
   task :display_channel_data, [:channel_id] do |_t, args|
     args.with_defaults(channel_id: Settings.youtube.channel_id)
