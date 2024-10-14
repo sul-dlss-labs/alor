@@ -3,6 +3,7 @@ youtube:
 
 cache:
   base_path: 'storage/cache'
+  expiry_days: 30
 
 reports:
   base_path: 'storage/reports'

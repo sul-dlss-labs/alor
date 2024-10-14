@@ -26,7 +26,6 @@ module Youtube
     def caption_report_data
       [].tap do |data|
         youtube_channel.videos.each do |video|
-          debugger
           data << [video.video_id, video.title, video.duration, video.view_count,
                    video.captioned?, video.asr_languages, video.edited_languages]
         end

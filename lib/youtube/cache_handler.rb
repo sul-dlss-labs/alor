@@ -14,7 +14,7 @@ module Youtube
     attr_reader :key
 
     def fetch
-      File.write(cache_file, yield) unless File.exist?(cache_file)
+      File.write(cache_file, yield) unless valid_cache?
 
       File.read(cache_file)
     end
@@ -23,6 +23,17 @@ module Youtube
 
     def cache_file
       "#{Settings.cache.base_path}/#{key}"
+    end
+
+    # Returns the age of the cache file in days
+    def cache_file_age
+      ((Time.now - File.mtime(cache_file)) / 86_400).to_i
+    end
+
+    def valid_cache?
+      return false unless File.exist?(cache_file)
+      
+      cache_file_age < Settings.cache.expiry_days
     end
   end
 end
