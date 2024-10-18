@@ -35,6 +35,20 @@ channel_id: 'CHANNEL_ID'
 
 Note: If a default channel ID is not set, you will need to pass the ID to the rake task.
 
+### Run the caption report using docker
+
+Note: If this is your first time running the report task, docker will first build the image. This should only take a few moments, and is only required on the first run or when changes have occured in the application.
+
+#### Using the default channel ID
+```
+docker compose run caption_report
+```
+#### When setting a channel ID
+```
+docker compose run -e CHANNEL_ID=[INSERT CHANNEL ID] caption_report
+```
+
+
 ### Run the caption report through rake
 
 With a default channel id set:
@@ -49,4 +63,19 @@ Without a default channel id set:
 bundle exec rake youtube:caption_report["CHANNEL_ID"]
 ```
 
+### Output
+
 The exported CSV file will be available in `storage/reports/<CHANNEL_ID>-<DATETIME>.csv`
+
+### Cached Data
+
+Cached channel, video, and caption data is stored in `storage/cache/[key]`
+
+By default, the data will be cached mainted for 30 days, but can be set locally by setting:
+
+```
+cache:
+  expiry_days: 30
+```
+
+In your `settings.local.yml` file.

@@ -1,0 +1,8 @@
+services:
+  caption_report:
+    build: .
+    command: bundle exec rake youtube:caption_report
+    volumes:
+      - .:/app
+    # environment:
+    #   - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json

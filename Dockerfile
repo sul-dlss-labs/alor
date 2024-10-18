@@ -13,5 +13,3 @@ WORKDIR /app
 COPY . .
 
 RUN bundle install
-
-CMD ["./bin/rake", "--tasks"]
